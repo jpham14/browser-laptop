@@ -88,9 +88,6 @@ module.exports.activeSettings = (siteSettings, appState, appConfig) => {
   })()
 
   settings.safeBrowsingControl = (() => {
-    if (settings.shieldsUp === false) {
-      return 'disableSafeBrowsing'
-    }
     if (siteSettings) {
       if (typeof siteSettings.get('safeBrowsingControl') === 'string') {
         return siteSettings.get('safeBrowsingControl')
