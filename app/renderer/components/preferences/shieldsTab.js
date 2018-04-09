@@ -46,8 +46,8 @@ class ShieldsTab extends ImmutableComponent {
   constructor (props) {
     super(props)
     this.onChangeAdControl = this.onChangeAdControl.bind(this)
+    this.onChangeSafeBrowsingControl = this.onChangeSafeBrowsingControl.bind(this)
     this.onToggleHTTPSE = this.onToggleSetting.bind(this, httpsEverywhere)
-    this.onToggleSafeBrowsing = this.onToggleSetting.bind(this, safeBrowsing)
     this.onToggleNoScript = this.onToggleSetting.bind(this, noScript)
   }
   onChangeAdControl (e) {
@@ -123,7 +123,6 @@ class ShieldsTab extends ImmutableComponent {
         <div data-l10n-id='advancedSafeBrowsingInfo' className={css(commonStyles.advancedSafeBrowsingInfo)} />
         <SettingCheckbox checked={this.props.braveryDefaults.get('httpsEverywhere')} dataL10nId='httpsEverywhere' onChange={this.onToggleHTTPSE} />
         <SettingCheckbox checked={this.props.braveryDefaults.get('noScript')} dataL10nId='noScriptPref' onChange={this.onToggleNoScript} />
-        <SettingCheckbox checked={this.props.braveryDefaults.get('safeBrowsing')} dataL10nId='safeBrowsing' onChange={this.onToggleSafeBrowsing} />
         {/* TODO: move this inline style to Aphrodite once refactored */}
         <div style={{marginTop: '15px'}}>
           <BrowserButton
