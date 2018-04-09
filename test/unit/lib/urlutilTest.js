@@ -164,6 +164,12 @@ describe('urlutil', function () {
     it('calls prependScheme', function () {
       assert.equal(urlUtil.getUrlFromInput('/file/path/to/file'), 'file:///file/path/to/file')
     })
+    it('calls prependScheme that includes space', function(){
+        assert.equal(urlUtil.getUrlFromInput(' /file/path/to/space file '), 'file:///file/path/to/space%20file')
+    })
+    it('is a search query with space', function(){
+        assert.equal(urlUtil.getUrlFromInput('http://example/search?q=dog cat'), 'http://example/search?q=dog%20cat')
+    })
   })
 
   describe('isURL', function () {

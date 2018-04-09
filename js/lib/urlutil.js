@@ -149,7 +149,7 @@ const UrlUtil = {
     }
 
     input = input.trim()
-
+    input = input.replace(/\s/g,"%20")
     input = UrlUtil.prependScheme(input)
 
     if (UrlUtil.isNotURL(input)) {
